@@ -36,7 +36,12 @@ public class Pessoa {
      * @return the nomeCompleto
      */
     public String getNomeCompleto() {
-        return nomeCompleto;
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.primNome).append(" *");
+        for (String s : this.outrosNomes) {
+            sb.append(s).append(" ");
+        }
+        return sb.toString().trim();
     }
 
     /**
@@ -47,17 +52,11 @@ public class Pessoa {
 
         //extraindo o primeiro nome com o espaço e retirando o espaço
         this.primNome = nome.substring(0, nome.indexOf(" ") + 1).trim();
-        System.out.println("primeiro nome: " + this.primNome);
 
         //retirando o primeiro nome (com o espaço final?) do restante dos outros outrosNomes
         String outros = nome.replace(this.primNome + " ", "");
-        System.out.println("Outros: " + outros);
 
         this.outrosNomes = outros.split(" ");
-
-        for (int i = 0; i < this.outrosNomes.length; i++) {
-            System.out.println("indice: " + i + " " + this.outrosNomes[i]);
-        }
 
     }
 

@@ -24,6 +24,10 @@ public class EscolaExceptions extends Exception {
 
     }
 
+    EscolaExceptions() {
+        messageError = "Erro desconhecido. Estranho.";
+    }
+
     @Override
     public String getMessage() {
         return messageError;
