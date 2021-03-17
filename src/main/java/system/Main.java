@@ -36,6 +36,7 @@ public class Main {
 
             } //Cadastro de aluno ou professor
             else if ("1".equals(escolha) || "2".equals(escolha)) {
+
                 try {
                     Cadastro cad;
                     cad = new Cadastro();
@@ -50,6 +51,7 @@ public class Main {
                     System.out.println("**** Status ****");
                     cod++;
                 } catch (Exception e) {
+                    System.out.println("teste de erro");
                     System.out.println(e.getMessage());
                 }
 

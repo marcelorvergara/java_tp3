@@ -18,6 +18,8 @@ public class EscolaExceptions extends Exception {
             messageError = "Entrada inválida ou inexistente!";
         } else if ("Mat inv".equals(msg)) {
             messageError = "Matrícula inválida! Tente novamente.";
+        } else if ("err_cad".equals(msg)) {
+            messageError = "Falha na entrada de dados. Favor verificar os dados digitados.\nO salário só pode conter números e um ponto para casas decimais.";
         } else {
             messageError = "Erro genérico, não identificado.";
         }
@@ -25,7 +27,7 @@ public class EscolaExceptions extends Exception {
     }
 
     EscolaExceptions() {
-        messageError = "Erro desconhecido. Estranho.";
+        messageError = "Erro genérico.";
     }
 
     @Override
